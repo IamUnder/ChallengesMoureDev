@@ -31,7 +31,9 @@ function main () {
     prompt.get(schema, (err, result) => {
         if (err) { return onErr(err) }
         console.log(`El resultado de la suma es: ${parseInt(result.number1) + parseInt(result.number2)}`);
-        
+        return setTimeout(() => {
+            console.log(`El proceso ha finalizado en ${result.time} segundos`); 
+        }, result.time * 1000)
     })
 }
 
